@@ -1,0 +1,11 @@
+<client>
+    <bucket      name="201"      color="darkslategrey"  label="1" icon="klingon/klingon_1.png"       tooltip="201" />
+    <bucket      name="211"      color="darkolivegreen" label="2" icon="klingon/klingon_2.png"       tooltip="211" />
+    <bucket      name="221"      color="darkslategrey"  label="3" icon="klingon/klingon_3.png"       tooltip="221" />
+    <bucket      name="231"      color="darkolivegreen" label="4" icon="klingon/klingon_4.png"       tooltip="231" />
+    <bucket      name="241"      color="darkslategrey"  label="5" icon="klingon/klingon_5.png"       tooltip="241" />
+    <lightblock  name="flame"    color="darkslategrey"  label=""  icon="klingon/klingon_props.png"   tooltip="Flame"    />
+    <lightblock  name="rainbow"  color="darkslategrey"  label=""  icon="klingon/klingon_takeoff.png" tooltip="Rainbow" />
+    <lightblock  name="ocean"    color="darkolivegreen" label=""  icon="klingon/klingon_s.png"       tooltip="Ocean"   />
+</client>
+
