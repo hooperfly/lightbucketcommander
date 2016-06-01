@@ -1,0 +1,56 @@
+<conf>
+    <bucket id="201" name="201" color="red"     />
+    <bucket id="202" name="202" color="red"     />
+    <bucket id="203" name="203" color="red"     />
+    <bucket id="204" name="204" color="red"     />
+    <bucket id="205" name="205" color="red"     />
+    <bucket id="206" name="206" color="red"     />
+    <bucket id="207" name="207" color="red"     />
+    <bucket id="208" name="208" color="red"     />
+    <bucket id="209" name="209" color="red"     />
+    <bucket id="210" name="210" color="red"     />
+    <bucket id="211" name="211" color="orange"  />
+    <bucket id="212" name="212" color="orange"  />
+    <bucket id="213" name="213" color="orange"  />
+    <bucket id="214" name="214" color="orange"  />
+    <bucket id="215" name="215" color="orange"  />
+    <bucket id="216" name="216" color="orange"  />
+    <bucket id="217" name="217" color="orange"  />
+    <bucket id="218" name="218" color="orange"  />
+    <bucket id="219" name="219" color="orange"  />
+    <bucket id="220" name="220" color="orange"  />
+    <bucket id="221" name="221" color="yellow"  />
+    <bucket id="222" name="222" color="yellow"  />
+    <bucket id="223" name="223" color="yellow"  />
+    <bucket id="224" name="224" color="yellow"  />
+    <bucket id="225" name="225" color="yellow"  />
+    <bucket id="226" name="226" color="yellow"  />
+    <bucket id="227" name="227" color="yellow"  />
+    <bucket id="228" name="228" color="yellow"  />
+    <bucket id="229" name="229" color="yellow"  />
+    <bucket id="230" name="230" color="yellow"  />
+    <bucket id="231" name="231" color="cyan"    />
+    <bucket id="232" name="232" color="cyan"    />
+    <bucket id="233" name="233" color="cyan"    />
+    <bucket id="234" name="234" color="cyan"    />
+    <bucket id="235" name="235" color="cyan"    />
+    <bucket id="236" name="236" color="cyan"    />
+    <bucket id="237" name="237" color="cyan"    />
+    <bucket id="238" name="238" color="cyan"    />
+    <bucket id="239" name="239" color="cyan"    />
+    <bucket id="240" name="240" color="cyan"    />
+    <bucket id="241" name="241" color="blue"    />
+    <bucket id="242" name="242" color="blue"    />
+    <bucket id="243" name="243" color="blue"    />
+    <bucket id="244" name="244" color="blue"    />
+    <bucket id="245" name="245" color="blue"    />
+    <bucket id="246" name="246" color="blue"    />
+    <bucket id="247" name="247" color="blue"    />
+    <bucket id="248" name="248" color="blue"    />
+    <bucket id="249" name="249" color="blue"    />
+    <bucket id="250" name="250" color="blue"    />
+    <block  name="flame"     />
+    <block  name="rainbow"   />
+    <block  name="ocean"     />
+</conf>
+

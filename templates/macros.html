@@ -1,0 +1,33 @@
+{% macro nav_link(endpoint, name) %}
+{% if request.endpoint.endswith(endpoint) %}
+  <li class="active"><a href="{{ url_for(endpoint) }}">{{name}}</a></li>
+{% else %}
+  <li><a href="{{ url_for(endpoint) }}">{{name}}</a></li>
+{% endif %}
+{% endmacro %}
+
+{% macro btn_container_style(width) %}
+  width: {{width}}px;
+  background: black;
+  overflow-y: auto;
+{% endmacro %}
+
+{% macro btn_style(width) %}
+  width: {{width}}px;
+  height: {{width}}px;
+  font-size: {{width/2}}px;
+{% endmacro %}
+
+{% macro cmd_btn_style(width) %}
+  width: {{width*2+6}}px;
+  height: {{width}}px;
+  font-size: {{width/3}}px;
+{% endmacro %}
+
+{% macro btn_link(id, tooltip, color, name, icon) %}
+{% if icon is equalto "" %}
+  <button id="{{id}}" title="{{tooltip}}" style="background:{{color}}" onmousedown="mousedownButton(this)" onclick="selectButton(this)">{{name}}</button>
+{% else %}
+  <button id="{{id}}" title="{{tooltip}}" style="background:{{color}}; background-image:url({{ url_for('static', filename ='images/'+icon) }}); background-repeat:no-repeat; background-size: 90%; background-position: center center" onmousedown="mousedownButton(this)" onclick="selectButton(this)"></button>
+{% endif %}
+{% endmacro %}

@@ -1,0 +1,57 @@
+<client>
+    <bucket name="201" color="red"    label="1" icon="" tooltip="" />
+    <bucket name="202" color="red"    label="2" icon="" tooltip="" />
+    <bucket name="203" color="red"    label="3" icon="" tooltip="" />
+    <bucket name="204" color="red"    label="4" icon="" tooltip="" />
+    <bucket name="205" color="red"    label="5" icon="" tooltip="" />
+    <bucket name="206" color="red"    label="6" icon="" tooltip="" />
+    <bucket name="207" color="red"    label="7" icon="" tooltip="" />
+    <bucket name="208" color="red"    label="8" icon="" tooltip="" />
+    <bucket name="209" color="red"    label="9" icon="" tooltip="" />
+    <bucket name="210" color="red"    label="10" icon="" tooltip="" />
+    <bucket name="211" color="orange" label="11" icon="" tooltip="" />
+    <bucket name="212" color="orange" label="12" icon="" tooltip="" />
+    <bucket name="213" color="orange" label="13" icon="" tooltip="" />
+    <bucket name="214" color="orange" label="14" icon="" tooltip="" />
+    <bucket name="215" color="orange" label="15" icon="" tooltip="" />
+    <bucket name="216" color="orange" label="16" icon="" tooltip="" />
+    <bucket name="217" color="orange" label="17" icon="" tooltip="" />
+    <bucket name="218" color="orange" label="18" icon="" tooltip="" />
+    <bucket name="219" color="orange" label="19" icon="" tooltip="" />
+    <bucket name="220" color="orange" label="20" icon="" tooltip="" />
+    <bucket name="221" color="yellow" label="21" icon="" tooltip="" />
+    <bucket name="222" color="yellow" label="22" icon="" tooltip="" />
+    <bucket name="223" color="yellow" label="23" icon="" tooltip="" />
+    <bucket name="224" color="yellow" label="24" icon="" tooltip="" />
+    <bucket name="225" color="yellow" label="25" icon="" tooltip="" />
+    <bucket name="226" color="yellow" label="26" icon="" tooltip="" />
+    <bucket name="227" color="yellow" label="27" icon="" tooltip="" />
+    <bucket name="228" color="yellow" label="28" icon="" tooltip="" />
+    <bucket name="229" color="yellow" label="29" icon="" tooltip="" />
+    <bucket name="230" color="yellow" label="30" icon="" tooltip="" />
+    <bucket name="231" color="cyan"   label="31" icon="" tooltip="" />
+    <bucket name="232" color="cyan"   label="32" icon="" tooltip="" />
+    <bucket name="233" color="cyan"   label="33" icon="" tooltip="" />
+    <bucket name="234" color="cyan"   label="34" icon="" tooltip="" />
+    <bucket name="235" color="cyan"   label="35" icon="" tooltip="" />
+    <bucket name="236" color="cyan"   label="36" icon="" tooltip="" />
+    <bucket name="237" color="cyan"   label="37" icon="" tooltip="" />
+    <bucket name="238" color="cyan"   label="38" icon="" tooltip="" />
+    <bucket name="239" color="cyan"   label="39" icon="" tooltip="" />
+    <bucket name="240" color="cyan"   label="40" icon="" tooltip="" />
+    <bucket name="241" color="blue"   label="41" icon="" tooltip="" />
+    <bucket name="242" color="blue"   label="42" icon="" tooltip="" />
+    <bucket name="243" color="blue"   label="43" icon="" tooltip="" />
+    <bucket name="244" color="blue"   label="44" icon="" tooltip="" />
+    <bucket name="245" color="blue"   label="45" icon="" tooltip="" />
+    <bucket name="246" color="blue"   label="46" icon="" tooltip="" />
+    <bucket name="247" color="blue"   label="47" icon="" tooltip="" />
+    <bucket name="248" color="blue"   label="48" icon="" tooltip="" />
+    <bucket name="249" color="blue"   label="49" icon="" tooltip="" />
+    <bucket name="250" color="blue"   label="50" icon="" tooltip="" />
+    <configuration rows="5" cols="10" />
+    <lightblock  name="flame"      color="red"         label=""  icon="fire-icon.png"        tooltip="Flame" />
+    <lightblock  name="rainbow"    color="lime"        label=""  icon="rainbow-icon.png"     tooltip="Rainbow" />
+    <lightblock  name="ocean"      color="dodgerblue"  label=""  icon="whale-ocean-icon.png" tooltip="Ocean" />
+</client>
+
