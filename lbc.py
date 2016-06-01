@@ -4,20 +4,20 @@
 /*
  * Copyright (C) 2016 Rich Burton
  *
- * This file is part of hooperfly open-source.
+ * This file is part of HooperFly Light Bucket Commander.
  *
- * hooperfly open-source is free software; you can redistribute it and/or modify
+ * HooperFly Light Bucket Commander is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2, or (at your option)
  * any later version.
  *
- * hooperfly open-source is distributed in the hope that it will be useful,
+ * HooperFly Light Bucket Commander is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with hooperfly open-source; see the file COPYING.  If not, see
+ * along with HooperFly Light Bucket Commander; see the file COPYING.  If not, see
  * <http://www.gnu.org/licenses/>.
  */
 """
@@ -48,12 +48,12 @@ log.setLevel(logging.ERROR)
 # --- Class/Global state variables
 
 lbc_version   = "0.0.1"
-verbose       = 0              # Default is disabled(i.e. = 0)
-curl          = 0              # Default is disabled(i.e. = 0)
-subscribe     = 0              # Default is disabled(i.e. = 0)
-server_host   = "127.0.0.1"    # Default to local host)
-server_port   = 5000           # Default it flask port)
-server_host_prefix = "127.0.0."
+verbose       = 0               # Default is disabled(i.e. = 0)
+curl          = 0               # Default is disabled(i.e. = 0)
+subscribe     = 0               # Default is disabled(i.e. = 0)
+server_host   = "127.0.0.1"     # Default to local host
+server_port   = 5000            # Default it flask port
+server_host_prefix = "127.0.0." # Used by IoB url generator
 
 # --- Bucket and Lighblock related state/methods
 
@@ -85,7 +85,7 @@ def print_bucket_data():
             print( lb_id, buckets[bc_id].lightblocks[lb_id].lb_name )
 
 def generate_configuration_stub():
-    tmp_bc_id = 0   # Assuming all bucket use the same flight plan, we cache an bucket index
+    tmp_bc_id = 0   # Assuming all bucket use the same light plan, we cache an bucket index
     curline = ''
 
     print('<client>')
@@ -109,11 +109,8 @@ def generate_configuration_stub():
     print('</client>')
 
 
-bucket_client_list       = []   # Used for rows in client; preserve list order
-lightblock_client_list    = []   # Used for columns in client view for lightblocks; preserve list order
-#lb_color_list              = ['lime', 'green', 'deepskyblue', 'dodgerblue', 'yellow', 'gold', 'orange', 'darkorange', 'orangered', 'red', 'darkred']
-#gd_color_list              = ['magenta', 'purple', 'deepskyblue', 'dodgerblue', 'lime', 'green', 'gold', 'orange', 'orangered', 'red']
-#wp_color_list              = ['deepskyblue', 'dodgerblue', 'lime', 'green', 'gold', 'orange', 'orangered', 'red']
+bucket_client_list         = []   # Used for rows in client; preserve list order
+lightblock_client_list     = []   # Used for columns in client view for lightblocks; preserve list order
 
 bc_color_list              = []   # Used by bucket view color cycler
 bc_label_list              = []   # Used by bucket view label cycler
@@ -212,6 +209,11 @@ def static_init_client_configuration_data(fname):
             print("Found lightblock name: %s" % buckets[tmp_bc_id].lightblocks[lb_id].lb_name)
         view_attributelist_helper(lightblock, lb_color_list, lb_label_list, lb_icon_list, lb_tooltip_list)
         lightblock_client_add(lb_id)
+
+
+def generate_iob_url(bc_id, lb_id):
+    return 'http://%s%d/?sequence=%s' % (server_host_prefix, bc_id, buckets[bc_id].lightblocks[lb_id].lb_name)
+
     
 
 # --- Routes/Paths ----
@@ -293,14 +295,12 @@ def lightblock_client_add(lb_id):
     return "bucket list is empty"    
 
 
-
-
 @app.route('/lightblock/<int:bc_id>/<int:lb_id>')
 def lightblock(bc_id, lb_id):
     retval = ''
 
-    rqst = 'http://%s%d/?sequence=%s' % (server_host_prefix, bc_id, buckets[bc_id].lightblocks[lb_id].lb_name)
-    print( 'request: %s' % rqst )
+    rqst = generate_iob_url(bc_id, lb_id)
+    if verbose: print( 'request: %s' % rqst )
     #os.system( "curl %s" % (rqst) )
     if curl: print_curl_format()
     return retval
@@ -311,8 +311,8 @@ def lightblock_all_bucket(lb_id):
     retval = ''
 
     for bc_id in bucket_client_list:
-        rqst = 'http://%s%d/?sequence=%s' % (server_host_prefix, bc_id, buckets[bc_id].lightblocks[lb_id].lb_name)
-        print( 'request: %s' % rqst )
+        rqst = generate_iob_url(bc_id, lb_id)
+        if verbose: print( 'request: %s' % rqst )
         #os.system( "curl %s &" % (rqst) )
     if curl: print_curl_format()
     return retval
@@ -329,11 +329,11 @@ def showview(name):
     view_mode   = request.args.get('view_mode',  'col')
     button_size = request.args.get('button_size', 64) 
     return render_template(name+'.html', p_host=server_host,          p_port=server_port, 
-                            p_row_count=len(bucket_client_list),    p_row_list=bucket_client_list, 
+                            p_row_count=len(bucket_client_list),      p_row_list=bucket_client_list, 
                             p_bc_color_list=bc_color_list,            p_bc_label_list=bc_label_list,
                             p_bc_icon_list=bc_icon_list,              p_bc_tooltip_list=bc_tooltip_list,
                             p_view_mode=view_mode,                    p_button_size=int(button_size),
-                            p_col_count=len(lightblock_client_list), p_col_list=lightblock_client_list,
+                            p_col_count=len(lightblock_client_list),  p_col_list=lightblock_client_list,
                             p_color_list=lb_color_list,               p_label_list=lb_label_list,
                             p_icon_list=lb_icon_list,                 p_tooltip_list=lb_tooltip_list)
 
@@ -342,12 +342,12 @@ def showview(name):
 def showlightblock():
     view_mode   = request.args.get('view_mode',   'col')
     button_size = request.args.get('button_size', 64) 
-    return render_template('lightblock.html', p_host=server_host,    p_port=server_port, 
-                            p_row_count=len(bucket_client_list),    p_row_list=bucket_client_list, 
+    return render_template('lightblock.html', p_host=server_host,     p_port=server_port, 
+                            p_row_count=len(bucket_client_list),      p_row_list=bucket_client_list, 
                             p_bc_color_list=bc_color_list,            p_bc_label_list=bc_label_list,
                             p_bc_icon_list=bc_icon_list,              p_bc_tooltip_list=bc_tooltip_list,
                             p_view_mode=view_mode,                    p_button_size=int(button_size),
-                            p_col_count=len(lightblock_client_list), p_col_list=lightblock_client_list,
+                            p_col_count=len(lightblock_client_list),  p_col_list=lightblock_client_list,
                             p_color_list=lb_color_list,               p_label_list=lb_label_list,
                             p_icon_list=lb_icon_list,                 p_tooltip_list=lb_tooltip_list)
 
@@ -395,6 +395,7 @@ if __name__ == '__main__':
         server_host = args.ip      # Store for use in htlm template generation
         server_port = args.port    # Store for use in htlm template generation
 
+        # --- Support variable for the IoB url generator
         a, b, c, d = server_host.split(".")
         server_host_prefix = a + '.' + b + '.' + c + '.'
 
