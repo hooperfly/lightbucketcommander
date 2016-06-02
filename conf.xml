@@ -49,8 +49,11 @@
     <bucket id="248" name="248" color="blue"    />
     <bucket id="249" name="249" color="blue"    />
     <bucket id="250" name="250" color="blue"    />
-    <block  name="flame"     />
+    <block  name="fire"      />
     <block  name="rainbow"   />
     <block  name="ocean"     />
+    <block  name="spinner"   />
+    <block  name="vapor"     />
+    <block  name="off"   />
 </conf>
 

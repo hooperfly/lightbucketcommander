@@ -301,7 +301,7 @@ def lightblock(bc_id, lb_id):
 
     rqst = generate_iob_url(bc_id, lb_id)
     if verbose: print( 'request: %s' % rqst )
-    #os.system( "curl %s" % (rqst) )
+    os.system( "curl %s" % (rqst) )
     if curl: print_curl_format()
     return retval
 
@@ -313,7 +313,7 @@ def lightblock_all_bucket(lb_id):
     for bc_id in bucket_client_list:
         rqst = generate_iob_url(bc_id, lb_id)
         if verbose: print( 'request: %s' % rqst )
-        #os.system( "curl %s &" % (rqst) )
+        os.system( "curl %s &" % (rqst) )
     if curl: print_curl_format()
     return retval
 

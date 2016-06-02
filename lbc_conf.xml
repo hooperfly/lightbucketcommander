@@ -50,8 +50,11 @@
     <bucket name="249" color="blue"   label="49" icon="" tooltip="" />
     <bucket name="250" color="blue"   label="50" icon="" tooltip="" />
     <configuration rows="5" cols="10" />
-    <lightblock  name="flame"      color="red"         label=""  icon="fire-icon.png"        tooltip="Flame"   />
-    <lightblock  name="rainbow"    color="lime"        label=""  icon="rainbow-icon.png"     tooltip="Rainbow" />
-    <lightblock  name="ocean"      color="dodgerblue"  label=""  icon="whale-ocean-icon.png" tooltip="Ocean"   />
+    <lightblock  name="fire"       color="red"         label=""  icon="fire-icon.png"           tooltip="Fire"     />
+    <lightblock  name="rainbow"    color="lime"        label=""  icon="rainbow-icon.png"        tooltip="Rainbow"  />
+    <lightblock  name="ocean"      color="dodgerblue"  label=""  icon="whale-ocean-icon.png"    tooltip="Ocean"    />
+    <lightblock  name="spinner"    color="cyan"        label=""  icon="spinner-icon.png"        tooltip="Spinner"  />
+    <lightblock  name="vapor"      color="darkgrey"    label=""  icon="vapor-icon.png"          tooltip="Vapor"    />
+    <lightblock  name="off"        color="black"       label=""  icon="poweroff-icon.png"       tooltip="Off"      />
 </client>
 
