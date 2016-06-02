@@ -24,7 +24,10 @@ The default values for `IP`, `PORT`, and `FILE`, if not specified, are `127.0.0.
 ### Running the Light Bucket Commander
 Open a terminal window and type the following command:
 
-    $ python lbc.py
+    $ python lbc.py -v -c -i <ip_address>
+
+    where <ip_address> is the IP address of the machine running the server.
+    If the -i option is not used, the IP address defaults to 127.0.0.1 (i.e. localhost)
 
 LBC is a python based `Flask` application. Please reference the [Flask documentation](http://flask.pocoo.org/docs/0.10/)
 for the installation and usage of `Flask`. Here are some of the python packages(versions) needed by `Flask`:
@@ -87,6 +90,14 @@ Example `lbc_conf.xml` file:
         <lightblock  name="ocean"    color="dodgerblue"  label=""  icon="whale-ocean-icon.png" tooltip="Ocean"   />        
     </client>
 
+To use a custom configuration file, something other than the defualt `lbc_conf.xml` file, the -f/--file option is required:
+
+    $ python lbc.py -v -c -i <ip_address> -f <name_of_config_file>
+
+    where <name_of_config_file> is the name of an alternate configuration file.
+    For example iob2016_conf.xml or klingon_conf.xml.
+
+
 ### Generating a Configuration Stub
 The generate switch (`-g`, `--generate`) parses the `conf.xml` file and generates a LBC compliant xml
 for use in a custom LBC configuration file.
@@ -148,6 +159,10 @@ desired button size. For example, to specify a button size of 40x40 pixels use t
 
 ![Alt Light Block buttonsize=40 View](doc/images/lightblock_buttonsize_screen.png?raw=true "Light Block buttonsize=40 View")
 
+You can specify both `view_mode` and `button_size` URL parameters using the following sytnax:
+
+    localhost:5000/show/lightblock/?view_mode=row&button_size=40
+
 
 ### Adding Client Data via Routes
 If the `--file` option is not used when starting the LBC server, the client related configuration must
@@ -186,6 +201,12 @@ Assuming the server is running on the local host(ip=127.0.0.1), type one of the 
 a browser(e.g. Chrome, Firefox, etc...) to execute the respective client view. 
 
     localhost:5000/show/lightblock/
+
+Of course, if you are using the IP address of your server system, the URL will use that IP address
+in place of `localhost`. For example if the server were running on 192.168.16.12, the URL would
+look like the following:
+
+    192.168.16.12:5000/show/lightblock/
 
 Remember to configure the bucket and lightblock client data prior to accessing 
 the respective client view.
