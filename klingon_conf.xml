@@ -4,8 +4,11 @@
     <bucket      name="221"      color="darkslategrey"  label="3" icon="klingon/klingon_3.png"       tooltip="221" />
     <bucket      name="231"      color="darkolivegreen" label="4" icon="klingon/klingon_4.png"       tooltip="231" />
     <bucket      name="241"      color="darkslategrey"  label="5" icon="klingon/klingon_5.png"       tooltip="241" />
-    <lightblock  name="flame"    color="darkslategrey"  label=""  icon="klingon/klingon_props.png"   tooltip="Flame"    />
+    <lightblock  name="fire"     color="darkslategrey"  label=""  icon="klingon/klingon_props.png"   tooltip="Fire"    />
     <lightblock  name="rainbow"  color="darkslategrey"  label=""  icon="klingon/klingon_takeoff.png" tooltip="Rainbow" />
     <lightblock  name="ocean"    color="darkolivegreen" label=""  icon="klingon/klingon_s.png"       tooltip="Ocean"   />
+    <lightblock  name="spinner"  color="darkolivegreen" label=""  icon="klingon/klingon_n.png"       tooltip="Spinner" />
+    <lightblock  name="vapor"    color="darkslategrey"  label=""  icon="klingon/klingon_g.png"       tooltip="Vapor"   />
+    <lightblock  name="off"      color="darkolivegreen" label=""  icon="klingon/klingon_h.png"       tooltip="Off"   />
 </client>
 

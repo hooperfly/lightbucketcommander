@@ -142,9 +142,12 @@ a row major view.
 #### Resizing Buttons
 The default button size is 64x64 pixels. Sometimes it is desireable to reduce or increase
 button sizes based on display variants. The `button_size` URL parameter is used to specify a
-desired button size. For example, to specify a button size of 50x50 pixels use the following:
+desired button size. For example, to specify a button size of 40x40 pixels use the following:
 
-    localhost:5000/show/lightblock/?button_size=50
+    localhost:5000/show/lightblock/?button_size=40
+
+![Alt Light Block buttonsize=40 View](doc/images/lightblock_buttonsize_screen.png?raw=true "Light Block buttonsize=40 View")
+
 
 ### Adding Client Data via Routes
 If the `--file` option is not used when starting the LBC server, the client related configuration must

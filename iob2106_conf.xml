@@ -55,6 +55,6 @@
     <lightblock  name="ocean"      color="dodgerblue"  label=""  icon="whale-ocean-icon.png"    tooltip="Ocean"    />
     <lightblock  name="spinner"    color="cyan"        label=""  icon="spinner-icon.png"        tooltip="Spinner"  />
     <lightblock  name="vapor"      color="darkgrey"    label=""  icon="vapor-icon.png"          tooltip="Vapor"    />
-    <lightblock  name="off"        color="black"       label=""  icon="poweroff-icon.png"       tooltip="Off"      />
+    <lightblock  name="off"        color="slategrey"   label=""  icon="poweroff-icon.png"       tooltip="Off"      />
 </client>
 
