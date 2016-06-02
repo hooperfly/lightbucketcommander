@@ -1,5 +1,5 @@
 # Light Bucket Commander
-![Alt Frankenstein Jr. and Buzz](doc/images/lbc_banner.png?raw=true "Frankenstein Jr. and Buzz")
+![Alt Zack and IoB Wall](doc/images/lbc_banner.png?raw=true "Zack and IoB Wall")
 
 ## Version:
 This is beta version 0.0.1 of the Light Bucket Commander(LBC) and subject to major refactoring.
