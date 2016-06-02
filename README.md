@@ -194,9 +194,9 @@ the respective client view.
 ![Alt Light Block View](doc/images/lightblock_screen.png?raw=true "Light Block View")
 
 ## Video Demos:
-Here are a couple of informal demo videos of the Light Bucket Commander:
+Here's an informal demo videos of the Light Bucket Commander:
 
-- [LBC: Light Block Video](https://www.youtube.com/watch?v=NgT0K1RzfmE)
+- [LBC: Light Block Video](https://www.youtube.com/watch?v=Rj0cl1sRktk)
 
 ## TODO:
 - [ ] Improve asynchronous request performance
