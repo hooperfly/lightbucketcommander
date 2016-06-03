@@ -223,5 +223,6 @@ Here's an informal demo videos of the Light Bucket Commander:
 - [ ] Improve asynchronous request performance
 
 ## COMPLETED:
+- [x] Added first pass at a `grid` view
 - [x] Seed the repo
 
