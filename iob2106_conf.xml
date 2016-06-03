@@ -49,7 +49,7 @@
     <bucket name="248" color="blue"   label="48" icon="" tooltip="" />
     <bucket name="249" color="blue"   label="49" icon="" tooltip="" />
     <bucket name="250" color="blue"   label="50" icon="" tooltip="" />
-    <configuration rows="5" cols="10" />
+    <layout name="grid"  rows="5" cols="10" />
     <lightblock  name="fire"       color="red"         label=""  icon="fire-icon.png"           tooltip="Fire"     />
     <lightblock  name="rainbow"    color="lime"        label=""  icon="rainbow-icon.png"        tooltip="Rainbow"  />
     <lightblock  name="ocean"      color="dodgerblue"  label=""  icon="whale-ocean-icon.png"    tooltip="Ocean"    />

@@ -68,15 +68,26 @@ class Bucket(object):
         self.bc_id        = bc_id
         self.name         = name
         self.color        = color
-        self.lightblocks = {}
+        self.lightblocks  = {}
+
+class Layout(object):
+    def __init__(self, name, rows, cols):
+        self.name         = name
+        self.rows         = rows
+        self.cols         = cols
+
  
 buckets = {}
+layout  = {}
 
 def add_new_bucket_lightblock( bucket, lb_id, lb_name):
     bucket.lightblocks[lb_id] = Lightblock(lb_id, lb_name)      
 
 def add_new_bucket(bc_id, name, color):
     buckets[bc_id] = Bucket(bc_id, name, color)
+
+def add_new_layout(name, rows, cols):
+    layout[0] = Layout(name, rows, cols)    
 
 def print_bucket_data():
     for bc_id in buckets:
@@ -210,6 +221,13 @@ def static_init_client_configuration_data(fname):
         view_attributelist_helper(lightblock, lb_color_list, lb_label_list, lb_icon_list, lb_tooltip_list)
         lightblock_client_add(lb_id)
 
+    # Populate layout client objects
+    for layout in root.findall('layout'):
+        name = layout.get('name')
+        rows = int(layout.get('rows'))
+        cols = int(layout.get('cols'))
+        print("Found layout: name=%s, rows=%d, cols=%d" % (name, rows, cols) )
+        add_new_layout(name, rows, cols)
 
 def generate_iob_url(bc_id, lb_id):
     return 'http://%s%d/?sequence=%s' % (server_host_prefix, bc_id, buckets[bc_id].lightblocks[lb_id].lb_name)
@@ -350,6 +368,20 @@ def showlightblock():
                             p_col_count=len(lightblock_client_list),  p_col_list=lightblock_client_list,
                             p_color_list=lb_color_list,               p_label_list=lb_label_list,
                             p_icon_list=lb_icon_list,                 p_tooltip_list=lb_tooltip_list)
+
+@app.route('/show/grid/')
+def showgrid():
+    view_mode   = request.args.get('view_mode',   'col')
+    button_size = request.args.get('button_size', 64) 
+    return render_template('grid.html', p_host=server_host,           p_port=server_port, 
+                            p_row_count=len(bucket_client_list),      p_row_list=bucket_client_list, 
+                            p_bc_color_list=bc_color_list,            p_bc_label_list=bc_label_list,
+                            p_bc_icon_list=bc_icon_list,              p_bc_tooltip_list=bc_tooltip_list,
+                            p_view_mode=view_mode,                    p_button_size=int(button_size),
+                            p_col_count=len(lightblock_client_list),  p_col_list=lightblock_client_list,
+                            p_color_list=lb_color_list,               p_label_list=lb_label_list,
+                            p_icon_list=lb_icon_list,                 p_tooltip_list=lb_tooltip_list,
+                            p_layout_rows=layout[0].rows,             p_layout_cols=layout[0].cols )
 
 
 @app.route('/about')
