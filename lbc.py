@@ -50,6 +50,7 @@ log.setLevel(logging.ERROR)
 lbc_version   = "0.0.1"
 verbose       = 0               # Default is disabled(i.e. = 0)
 curl          = 0               # Default is disabled(i.e. = 0)
+test          = 0               # Default is disabled(i.e. = 0)
 subscribe     = 0               # Default is disabled(i.e. = 0)
 server_host   = "127.0.0.1"     # Default to local host
 server_port   = 5000            # Default it flask port
@@ -319,7 +320,7 @@ def lightblock(bc_id, lb_id):
 
     rqst = generate_iob_url(bc_id, lb_id)
     if verbose: print( 'request: %s' % rqst )
-    os.system( "curl %s" % (rqst) )
+    if not test: os.system( "curl %s" % (rqst) )
     if curl: print_curl_format()
     return retval
 
@@ -331,7 +332,7 @@ def lightblock_all_bucket(lb_id):
     for bc_id in bucket_client_list:
         rqst = generate_iob_url(bc_id, lb_id)
         if verbose: print( 'request: %s' % rqst )
-        os.system( "curl %s &" % (rqst) )
+        if not test: os.system( "curl %s &" % (rqst) )
     if curl: print_curl_format()
     return retval
 
@@ -402,6 +403,7 @@ if __name__ == '__main__':
                         help="use the specified client configuration file")
     parser.add_argument("-g","--generate",  action="store_true", help="generate a client configuration stub")
     parser.add_argument("-c","--curl",      action="store_true", help="dump actions as curl commands")
+    parser.add_argument("-t","--test",      action="store_true", help="test mode; do not send curl commands")
     parser.add_argument("-v","--verbose",   action="store_true", help="verbose mode")
 
     try:
@@ -416,6 +418,8 @@ if __name__ == '__main__':
             sys.exit(0)
 
         # Handle misc. command line arguments
+        if args.test: 
+            test=args.test
         if args.verbose: 
             verbose=args.verbose
         if args.curl: 

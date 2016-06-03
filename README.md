@@ -8,7 +8,7 @@ This is beta version 0.0.1 of the Light Bucket Commander(LBC) and subject to maj
 The Light Bucket Commander(LBC) is a web based, RESTful application for controlling multiple 
 light buckets including the [IoB 2016 Project](https://github.com/breedx2/IoB2016).
 
-    usage: lbc.py [-h] [-i IP] [-p PORT] [-f FILE] [-g] [-c] [-s] [-v]
+    usage: lbc.py [-h] [-i IP] [-p PORT] [-f FILE] [-g] [-c] [-t] [-v]
 
     optional arguments:
       -h, --help            show this help message and exit
@@ -17,6 +17,7 @@ light buckets including the [IoB 2016 Project](https://github.com/breedx2/IoB201
       -f FILE, --file FILE  use the specified client configuration file
       -g, --generate        generate a client configuration stub
       -c, --curl            dump actions as curl commands
+      -t, --test            test mode; do not send curl commands
       -v, --verbose         verbose mode
 
 The default values for `IP`, `PORT`, and `FILE`, if not specified, are `127.0.0.1`, `5000`, and `lbc_conf.xml`, respectively.
@@ -196,17 +197,20 @@ Once the client related data is configured, the various client views of the LBC 
     Syntax:
 
     - Light Block Route: show/lightblock/
+    - Grid Route:        show/grid/
 
 Assuming the server is running on the local host(ip=127.0.0.1), type one of the following URL's into
 a browser(e.g. Chrome, Firefox, etc...) to execute the respective client view. 
 
     localhost:5000/show/lightblock/
+    localhost:5000/show/grid/
 
 Of course, if you are using the IP address of your server system, the URL will use that IP address
 in place of `localhost`. For example if the server were running on 192.168.16.12, the URL would
 look like the following:
 
     192.168.16.12:5000/show/lightblock/
+    192.168.16.12:5000/show/grid/
 
 Remember to configure the bucket and lightblock client data prior to accessing 
 the respective client view.
@@ -223,6 +227,7 @@ Here's an informal demo videos of the Light Bucket Commander:
 - [ ] Improve asynchronous request performance
 
 ## COMPLETED:
+- [x] Added `-t/--test` command line argument and icons for `grid` view actions
 - [x] Added first pass at a `grid` view
 - [x] Seed the repo
 
