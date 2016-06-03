@@ -2,7 +2,7 @@
 ![Alt Zack and IoB Wall](doc/images/lbc_banner.png?raw=true "Zack and IoB Wall")
 
 ## Version:
-This is beta version 0.0.2 of the Light Bucket Commander(LBC) and subject to major refactoring.
+This is beta version 0.0.3 of the Light Bucket Commander(LBC) and subject to major refactoring.
 
 ## Overview:
 The Light Bucket Commander(LBC) is a web based, RESTful application for controlling multiple 
@@ -230,6 +230,7 @@ Here's an informal demo videos of the Light Bucket Commander:
 - [ ] Improve asynchronous request performance
 
 ## COMPLETED:
+- [x] Updated grid view to reflect pen/brush state changes
 - [x] Added lightblock_mode support for `grid` view
 - [x] Added `-t/--test` command line argument and icons for `grid` view actions
 - [x] Added first pass at a `grid` view
