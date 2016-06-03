@@ -2,7 +2,7 @@
 ![Alt Zack and IoB Wall](doc/images/lbc_banner.png?raw=true "Zack and IoB Wall")
 
 ## Version:
-This is beta version 0.0.1 of the Light Bucket Commander(LBC) and subject to major refactoring.
+This is beta version 0.0.2 of the Light Bucket Commander(LBC) and subject to major refactoring.
 
 ## Overview:
 The Light Bucket Commander(LBC) is a web based, RESTful application for controlling multiple 
@@ -196,8 +196,8 @@ Once the client related data is configured, the various client views of the LBC 
 
     Syntax:
 
-    - Light Block Route: show/lightblock/
-    - Grid Route:        show/grid/
+    - Light Block Route: /show/lightblock/
+    - Grid Route:        /show/grid/
 
 Assuming the server is running on the local host(ip=127.0.0.1), type one of the following URL's into
 a browser(e.g. Chrome, Firefox, etc...) to execute the respective client view. 
@@ -218,6 +218,9 @@ the respective client view.
 #### Light Block View
 ![Alt Light Block View](doc/images/lightblock_screen.png?raw=true "Light Block View")
 
+#### Grid View
+![Alt Grid View](doc/images/grid_screen.png?raw=true "Grid View")
+
 ## Video Demos:
 Here's an informal demo videos of the Light Bucket Commander:
 
@@ -227,6 +230,7 @@ Here's an informal demo videos of the Light Bucket Commander:
 - [ ] Improve asynchronous request performance
 
 ## COMPLETED:
+- [x] Added lightblock_mode support for `grid` view
 - [x] Added `-t/--test` command line argument and icons for `grid` view actions
 - [x] Added first pass at a `grid` view
 - [x] Seed the repo

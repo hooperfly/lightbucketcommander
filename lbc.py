@@ -47,7 +47,7 @@ log.setLevel(logging.ERROR)
 
 # --- Class/Global state variables
 
-lbc_version   = "0.0.1"
+lbc_version   = "0.0.2"
 verbose       = 0               # Default is disabled(i.e. = 0)
 curl          = 0               # Default is disabled(i.e. = 0)
 test          = 0               # Default is disabled(i.e. = 0)
