@@ -1,7 +1,11 @@
 {% extends "layout.html" %}
 
 {% macro case_command(id, row, col) %}
-  case {{id}}:    aReq.open("GET", cmd_lightblock + bucket_id[{{row}}] + '/' + lightblock_id[lightblock_mode], true);  aReq.send(); break;
+  case {{id}}:    
+      aReq.open("GET", cmd_lightblock + bucket_id[{{row}}] + '/' + lightblock_id[lightblock_mode], true);  
+      aReq.send();
+      document.getElementById({{row}}).style.background = lightblock_color[lightblock_mode]; 
+      break;
 {% endmacro %}
 
 {% macro case_command_mode(id, col) %}
@@ -9,7 +13,12 @@
 {% endmacro %}
 
 {% macro case_command_group(id, col) %}
-  case {{id}}:    bReq.open("GET", cmd_lightblock + lightblock_id[{{col}}], true);  bReq.send(); break;
+  case {{id}}:    
+      bReq.open("GET", cmd_lightblock + lightblock_id[{{col}}], true);  
+      bReq.send();
+      lightblock_mode = {{col}};
+      fillGrid(); 
+      break;
 {% endmacro %}
 
 {% block head %}
@@ -30,8 +39,9 @@ var port_number     = '{{ p_port }}';
 var ip_cmd_prefix   = 'http://' + ip_addr + ':' + port_number;  // Prefix for URL commands that includes the ip address and port
 var cmd_lightblock = ip_cmd_prefix + '/lightblock/';
 
-var bucket_id     = '{{ p_row_list }}'.replace( / |\[|\]/g, '' ).split(',');    // Strips space and square brackets from list before splitting
-var lightblock_id  = '{{ p_col_list }}'.replace( / |\[|\]/g, '' ).split(',');    // Strips space and square brackets from list before splitting
+var bucket_id         = '{{ p_row_list }}'.replace( / |\[|\]/g, '' ).split(',');      // Strips space and square brackets from list before splitting
+var lightblock_id     = '{{ p_col_list }}'.replace( / |\[|\]/g, '' ).split(',');      // Strips space and square brackets from list before splitting
+var lightblock_color  = {{ p_color_list|safe }};    
 var lightblock_mode = 0
 
 
@@ -71,6 +81,17 @@ function clearRowBoarders(row) {
   }  
 
 }
+
+function fillGrid() {
+
+  for (var i = 0; i < {{p_row_count}}; i++) {
+    document.getElementById(i).style.borderColor = "black";
+    document.getElementById(i).style.color = "black";
+    document.getElementById(i).style.background = lightblock_color[lightblock_mode];
+  }  
+
+}
+
 
 function setRowColumnBoarder(row, col) {
   var tid = ((row - 1)*col_count) + (col-1);
