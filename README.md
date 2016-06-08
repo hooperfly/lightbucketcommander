@@ -219,12 +219,15 @@ the respective client view.
 ![Alt Light Block View](doc/images/lightblock_screen.png?raw=true "Light Block View")
 
 #### Grid View
+The `Grid` view is an optimized to interact with a set of light buckets based on a given geometry. It provides a simple
+interface for creating patterns using `pen` and `fill` modes.
+
 ![Alt Grid View](doc/images/grid_screen.png?raw=true "Grid View")
 
 ## Video Demos:
-Here's an informal demo videos of the Light Bucket Commander:
+Here's an informal demo video of the Light Bucket Commander:
 
-- [LBC: Light Block Video](https://www.youtube.com/watch?v=Rj0cl1sRktk)
+- [LBC: Light Block Video](https://youtu.be/XFHEub7xecc)
 
 ## TODO:
 - [ ] Improve asynchronous request performance
